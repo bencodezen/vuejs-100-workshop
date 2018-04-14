@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-		<h1>Let's Build a Calculator with <img src="./assets/logo.png" width=50 /></h1>
+		<h1 class="title">A Simple Calculator with <img class="vue-logo" src="./assets/logo.png" />.js</h1>
+		<p class="subtitle">Built by {{ name }}</p>
 		<Calculator />
 	</div>
 </template>
@@ -10,6 +11,11 @@ import Calculator from './components/Calculator'
 
 export default {
 	name: 'App',
+	data() {
+		return {
+			name: 'Ben Hong'
+		}
+	},
 	components: {
 		Calculator: Calculator
 	}
@@ -17,12 +23,29 @@ export default {
 </script>
 
 <style>
-#app {
+html {
 	font-family: 'Avenir', Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-align: center;
 	color: #2c3e50;
-	margin-top: 60px;
+	margin-top: 30px;
+}
+
+.subtitle {
+	margin-top: 5px;
+	margin-bottom: 30px;
+}
+
+.title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 0;
+}
+
+.vue-logo {
+	width: 3rem;
+	margin-left: 10px;
 }
 </style>

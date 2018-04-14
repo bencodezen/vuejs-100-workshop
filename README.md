@@ -7,6 +7,21 @@ In this workshop, we will be covering:
 * Hands on experience with Vue.js
 * Build a fully functioning calculator app
 
-## About
+## Getting Setup
 
-**Speaker:** Ben Hong ([@bencodezen](https://twitter.com/bencodezen))
+### Dependencies
+
+* [Node.js](https://nodejs.org/en/)
+
+### Instructions
+
+```bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+```

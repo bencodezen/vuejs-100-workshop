@@ -9,7 +9,7 @@ In this workshop, we will be covering:
 
 ## Getting Setup
 
-### Dependencies
+### Dependency
 
 * [Node.js](https://nodejs.org/en/)
 

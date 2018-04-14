@@ -15,6 +15,10 @@ In this workshop, we will be covering:
 
 ### Instructions
 
+#### Develop in the Cloud
+
+1.  Open my [CodeSandbox project](https://codesandbox.io/s/github/bencodezen/vuejs-100-workshop)
+
 #### Running Locally
 
 1.  Clone this repository

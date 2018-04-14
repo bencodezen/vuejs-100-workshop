@@ -15,13 +15,24 @@ In this workshop, we will be covering:
 
 ### Instructions
 
+#### Running Locally
+
+1.  Clone this repository
+2.  Navigate to project directory in terminal
+3.  Run the following commands:
+
 ```bash
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+# start a local server with hot reload
+# default url is http://localhost:8080
 npm run dev
+```
 
+#### Generating Production Code
+
+```bash
 # build for production with minification
 npm run build
 ```

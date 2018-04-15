@@ -1,7 +1,7 @@
 <template>
   <div id="app">
 		<h1 class="title">A Simple Calculator with <img class="vue-logo" src="./assets/logo.png" />.js</h1>
-		<p class="subtitle">Built by {{ name }}</p>
+		<p class="subtitle">Built by {{ name }} (<a :href="twitter.url" :title="`${twitter.username}'s Twitter profile`">@{{ twitter.username }})</a></p>
 		<Calculator />
 	</div>
 </template>
@@ -13,7 +13,11 @@ export default {
 	name: 'App',
 	data() {
 		return {
-			name: 'Ben Hong'
+			name: 'Ben Hong',
+			twitter: {
+				username: 'bencodezen',
+				url: 'https://www.twitter.com/bencodezen'
+			}
 		}
 	},
 	components: {

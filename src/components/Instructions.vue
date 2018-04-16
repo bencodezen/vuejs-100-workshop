@@ -27,11 +27,11 @@ export default {
 				'Generate number buttons',
 				'Make numbers appear in equation on click',
 				'Generate operations',
+				'Attach a custom class of `is-wide` to the zero button',
 				'Make operations appear in equation on click',
 				'Make the equal button evaluate the equation and update the value on the calculator',
 				'Generate actions',
-				'Integrate functionality for actions',
-				'Attach a custom class of `is-wide` to the zero button'
+				'Integrate functionality for actions'
 			]
 		}
 	}

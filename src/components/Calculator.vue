@@ -18,7 +18,7 @@
 					<button v-for="action in actions"
 						@click="updateEquation"
 						class="calc-btn"
-						style="background-color: #47B784"
+						style="background-color: var(--purple)"
 						:style="action === 'C' ? 'background-color: var(--red)' : ''"
 						:key="action"
 						:value="action"
@@ -30,7 +30,8 @@
 					<button v-for="operation in operations"
 						@click="updateEquation"
 						class="calc-btn"
-						style="background-color: #9770E9"
+						style="background-color: var(--purple)"
+						:style="operation === '=' ? 'background-color: var(--teal)' : ''"
 						:key="operation"
 						:value="operation"
 					>
@@ -84,11 +85,13 @@ export default {
 
 <style>
 :root {
-	--gray: #606060;
 	--pale-blue: #ebf6fc;
-	--midnight-blue: #1b2b32;
+	--dark-gray: #3a3a3a;
 	--red: #ad5153;
-	--teal: #3a646e;
+
+	--purple: #554a58;
+	--gray: #4a4a4a;
+	--teal: #538881;
 
 	--row-gutter: 20px;
 }
@@ -99,10 +102,8 @@ export default {
 
 .calc {
 	display: flex;
-	max-width: 360px;
-	padding: 20px;
-	margin: 0 auto;
-	background-color: var(--midnight-blue);
+	max-width: 320px;
+	background-color: var(--dark-gray);
 	box-sizing: border-box;
 	overflow: hidden;
 }
@@ -113,7 +114,6 @@ export default {
 	grid-template-areas:
 		'other operations'
 		'numbers operations';
-	grid-row-gap: var(--row-gutter);
 }
 
 .calc-operations-grid {
@@ -121,7 +121,6 @@ export default {
 	display: grid;
 	justify-items: center;
 	align-content: space-around;
-	grid-row-gap: var(--row-gutter);
 }
 
 .calc-other-grid {
@@ -135,26 +134,24 @@ export default {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border-radius: 50%;
 	font-size: 1.5rem;
-	width: 60px;
-	height: 60px;
+	width: 80px;
+	height: 80px;
 	background-color: var(--gray);
 	border: 0;
 	color: var(--pale-blue);
+	border: 1px solid var(--dark-gray);
 }
 
 .calc-btn.is-wide {
 	width: 100%;
 	grid-column: 1 / span 2;
-	border-radius: 30px;
 }
 
 .calc-num-grid {
 	grid-area: numbers;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	grid-row-gap: var(--row-gutter);
 	justify-items: center;
 	align-content: space-around;
 }
@@ -165,11 +162,12 @@ export default {
 
 .calc-total {
 	margin: 0;
-	padding-bottom: 1rem;
+	padding: 1.5rem 1rem;
 	font-size: 5rem;
 	text-align: right;
 	color: var(--pale-blue);
 	max-width: 7ch;
 	overflow: hidden;
+	line-height: 1;
 }
 </style>

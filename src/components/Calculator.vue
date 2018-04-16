@@ -4,18 +4,18 @@
       <p class="calc-total">
 		  <!-- Render expression data here -->
 	  </p>
-			<div class="calc-btn-grid">
-				<div class="calc-num-grid">
+			<div class="calc-grid-btns">
+				<div class="calc-grid-num">
 					<!-- Generate number buttons (i.e., 1, 2, 3 ... 0, .) -->
 					<!-- Element: button -->
 					<!-- Class: calc-btn -->
 				</div>
-				<div class="calc-other-grid">
+				<div class="calc-grid-actions">
 					<!-- Generate action buttons (i.e., C, +/-, ^) -->
 					<!-- Element: button -->
 					<!-- Class: calc-btn -->
 				</div>
-				<div class="calc-operations-grid">
+				<div class="calc-grid-operations">
 					<!-- Generate operations buttons (i.e., /, *, +, -, =) -->
 					<!-- Element: button -->
 					<!-- Class: calc-btn -->
@@ -35,18 +35,11 @@ export default {
 <style>
 :root {
 	--pale-blue: #ebf6fc;
+	--gray: #4a4a4a;
 	--dark-gray: #3a3a3a;
 	--red: #ad5153;
-
 	--purple: #554a58;
-	--gray: #4a4a4a;
 	--teal: #538881;
-
-	--row-gutter: 20px;
-}
-
-.calc {
-	display: grid;
 }
 
 .calc {
@@ -57,26 +50,34 @@ export default {
 	overflow: hidden;
 }
 
-.calc-btn-grid {
+.calc-grid-actions {
+	grid-area: actions;
+	display: grid;
+	grid-auto-flow: column;
+	justify-items: center;
+}
+
+.calc-grid-btns {
 	display: grid;
 	grid-template-columns: 3fr 1fr;
 	grid-template-areas:
-		'other operations'
+		'actions operations'
 		'numbers operations';
 }
 
-.calc-operations-grid {
-	grid-area: operations;
+.calc-grid-num {
+	grid-area: numbers;
 	display: grid;
+	grid-template-columns: repeat(3, 1fr);
 	justify-items: center;
 	align-content: space-around;
 }
 
-.calc-other-grid {
-	grid-area: other;
+.calc-grid-operations {
+	grid-area: operations;
 	display: grid;
-	grid-auto-flow: column;
 	justify-items: center;
+	align-content: space-around;
 }
 
 .calc-btn {
@@ -95,14 +96,6 @@ export default {
 .calc-btn.is-wide {
 	width: 100%;
 	grid-column: 1 / span 2;
-}
-
-.calc-num-grid {
-	grid-area: numbers;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	justify-items: center;
-	align-content: space-around;
 }
 
 .calc-panel {

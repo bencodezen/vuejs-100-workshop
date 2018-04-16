@@ -24,7 +24,6 @@ In this workshop, we will be covering:
 #### Instructions
 
 1.  Open the [CodeSandbox starter template](https://codesandbox.io/s/github/bencodezen/vuejs-100-workshop)
-2.  Open [CodePen exercise](https://codepen.io/BenCodeZen/pen/rYgGdR?editors=1010)
 
 ### Running Locally
 

@@ -1,44 +1,44 @@
 <template>
   <article class="calc">
     <section class="calc-panel">
-      <p class="calc-total">{{ expression }}</p>
-			<div class="calc-btn-grid">
-				<div class="calc-num-grid">
-					<button v-for="item in buttons"
-						@click="updateEquation"
-						class="calc-btn"
-						:class="item === 0 ? 'is-wide' : ''"
-						:key="item"
-						:value="item"
-					>
-						{{ item }}
-					</button>
-				</div>
-				<div class="calc-actions-grid">
-					<button v-for="action in actions"
-						@click="updateEquation"
-						class="calc-btn"
-						style="background-color: var(--purple)"
-						:style="action === 'C' ? 'background-color: var(--red)' : ''"
-						:key="action"
-						:value="action"
-					>
-						{{ action }}
-					</button>
-				</div>
-				<div class="calc-operations-grid">
-					<button v-for="operation in operations"
-						@click="updateEquation"
-						class="calc-btn"
-						style="background-color: var(--purple)"
-						:style="operation === '=' ? 'background-color: var(--teal)' : ''"
-						:key="operation"
-						:value="operation"
-					>
-						{{ operation }}
-					</button>
-				</div>
+		<p class="calc-total">{{ expression }}</p>
+		<div class="calc-grid-btns">
+			<div class="calc-grid-num">
+				<button v-for="item in buttons"
+					@click="updateEquation"
+					class="calc-btn"
+					:class="item === 0 ? 'is-wide' : ''"
+					:key="item"
+					:value="item"
+				>
+					{{ item }}
+				</button>
 			</div>
+			<div class="calc-grid-actions">
+				<button v-for="action in actions"
+					@click="updateEquation"
+					class="calc-btn"
+					style="background-color: var(--purple)"
+					:style="action === 'C' ? 'background-color: var(--red)' : ''"
+					:key="action"
+					:value="action"
+				>
+					{{ action }}
+				</button>
+			</div>
+			<div class="calc-grid-operations">
+				<button v-for="operation in operations"
+					@click="updateEquation"
+					class="calc-btn"
+					style="background-color: var(--purple)"
+					:style="operation === '=' ? 'background-color: var(--teal)' : ''"
+					:key="operation"
+					:value="operation"
+				>
+					{{ operation }}
+				</button>
+			</div>
+		</div>
     </section>
   </article>
 </template>
@@ -101,7 +101,14 @@ export default {
 	overflow: hidden;
 }
 
-.calc-btn-grid {
+.calc-grid-actions {
+	grid-area: actions;
+	display: grid;
+	grid-auto-flow: column;
+	justify-items: center;
+}
+
+.calc-grid-btns {
 	display: grid;
 	grid-template-columns: 3fr 1fr;
 	grid-template-areas:
@@ -109,18 +116,19 @@ export default {
 		'numbers operations';
 }
 
-.calc-operations-grid {
-	grid-area: operations;
+.calc-grid-num {
+	grid-area: numbers;
 	display: grid;
+	grid-template-columns: repeat(3, 1fr);
 	justify-items: center;
 	align-content: space-around;
 }
 
-.calc-actions-grid {
-	grid-area: actions;
+.calc-grid-operations {
+	grid-area: operations;
 	display: grid;
-	grid-auto-flow: column;
 	justify-items: center;
+	align-content: space-around;
 }
 
 .calc-btn {

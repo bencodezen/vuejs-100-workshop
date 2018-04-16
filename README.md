@@ -1,11 +1,17 @@
 # Vue.js 100 Workshop
 
+## Description
+
 In this workshop, we will be covering:
 
 * What is Vue.js and why should you care?
 * How does it compare to other frameworks?
 * Hands on experience with Vue.js
 * Build a fully functioning calculator app
+
+## Preview
+
+![Calculator App Preview](/preview.gif)
 
 ## Getting Setup
 

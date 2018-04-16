@@ -14,7 +14,7 @@
 						{{ item }}
 					</button>
 				</div>
-				<div class="calc-other-grid">
+				<div class="calc-actions-grid">
 					<button v-for="action in actions"
 						@click="updateEquation"
 						class="calc-btn"
@@ -86,18 +86,11 @@ export default {
 <style>
 :root {
 	--pale-blue: #ebf6fc;
+	--gray: #4a4a4a;
 	--dark-gray: #3a3a3a;
 	--red: #ad5153;
-
 	--purple: #554a58;
-	--gray: #4a4a4a;
 	--teal: #538881;
-
-	--row-gutter: 20px;
-}
-
-.calc {
-	display: grid;
 }
 
 .calc {
@@ -112,7 +105,7 @@ export default {
 	display: grid;
 	grid-template-columns: 3fr 1fr;
 	grid-template-areas:
-		'other operations'
+		'actions operations'
 		'numbers operations';
 }
 
@@ -123,8 +116,8 @@ export default {
 	align-content: space-around;
 }
 
-.calc-other-grid {
-	grid-area: other;
+.calc-actions-grid {
+	grid-area: actions;
 	display: grid;
 	grid-auto-flow: column;
 	justify-items: center;
@@ -146,14 +139,6 @@ export default {
 .calc-btn.is-wide {
 	width: 100%;
 	grid-column: 1 / span 2;
-}
-
-.calc-num-grid {
-	grid-area: numbers;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	justify-items: center;
-	align-content: space-around;
 }
 
 .calc-panel {

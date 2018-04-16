@@ -2,12 +2,16 @@
   	<div id="app">
 		<h1 class="title">A Simple Calculator with <img class="vue-logo" src="./assets/logo.png" />.js</h1>
 		<p class="subtitle">Built by {{ name }} (<a :href="twitter.url" :title="`${twitter.username}'s Twitter profile`">@{{ twitter.username }})</a></p>
-		<Calculator />
+		<section style="display: flex; justify-content: center;">
+			<Calculator />
+			<Instructions />
+		</section>
 	</div>
 </template>
 
 <script>
 import Calculator from './components/Calculator'
+import Instructions from './components/Instructions'
 
 export default {
 	name: 'App',
@@ -21,7 +25,8 @@ export default {
 		}
 	},
 	components: {
-		Calculator: Calculator
+		Calculator: Calculator,
+		Instructions: Instructions
 	}
 }
 </script>

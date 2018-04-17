@@ -9,6 +9,10 @@ In this workshop, we will be covering:
 * Hands on experience with Vue.js
 * Build a fully functioning calculator app
 
+## Resources
+
+* [Slides](/vuejs-100.pdf)
+
 ## Preview
 
 ![Calculator App Preview](/preview.gif)
